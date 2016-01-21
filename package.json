@@ -1,6 +1,6 @@
 {
   "name": "@getable/ribcage-gen",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "A generator script for components",
   "main": "index.js",
   "bin": {
