@@ -14,9 +14,6 @@ export default class {{PascalName}} extends Component {
     name: '{{titleName}}'
   }
 
-  // initialize state values
-  state = {}
-
   render () {
     return (<div>
       <h1 className={styles.title} testRef="title">{this.props.name} component</h1>
