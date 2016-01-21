@@ -8,6 +8,7 @@ var hbsDir = require('hbs-dir')
     backbone: 'backbone-component-template'
     , react: 'react-component-template'
     , pane: 'backbone-pane-template'
+    , page: 'react-page-template'
   }
 
 // aliases for the type map
