@@ -18,7 +18,6 @@ module.exports = function ribcageGen (options, cb) {
   if (!typeMap[options.type]) throw new Error('type ' + options.type + ' not found')
 
   var target = path.join(process.cwd(), options.target)
-  var exists = fs.existsSync(target)
 
   var nameParts = options.target.split(path.sep)
   , name = nameParts[nameParts.length - 1]
@@ -30,7 +29,6 @@ module.exports = function ribcageGen (options, cb) {
         , camelName: change.camelCase(name)
         , titleName: change.titleCase(name)
         , name: name
-        , exists: exists
       }
   }
   , successCallback = function successCallback () {
