@@ -17,7 +17,7 @@ typeMap.jsx = typeMap.react
 module.exports = function ribcageGen (options, cb) {
   var type = typeMap[options.type]
   if (!options) throw new Error('options are required')
-  if (type) throw new Error('type ' + options.type + ' not found')
+  if (!type) throw new Error('type ' + options.type + ' not found')
 
   // hacky way to ensure pages
   if (options.type === 'react' && options.target.indexOf('/page-') > -1) {
