@@ -1,11 +1,14 @@
 import React, {PropTypes, Component} from 'react'
-import pureRender from 'pure-render-decorator'
+import {connect} from 'react-redux'
 import styles from './index.css'
 import Columns from '../_pieces/columns'
 
+const mapStateToProps = (state) => {
+  return {}
+}
 // NOTE: if this component is used directly by react-router, not use the
 // pureRender decorator. It will cause the <Link> component to not re-render.
-@pureRender
+@connect(mapStateToProps)
 export default class {{PascalName}} extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired
