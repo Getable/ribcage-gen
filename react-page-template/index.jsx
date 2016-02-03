@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react'
+import Helmet from 'react-helmet'
 import {connect} from 'react-redux'
 import styles from './index.css'
 import Columns from '../_pieces/columns'
@@ -11,11 +12,13 @@ const mapStateToProps = (state) => {
 @connect(mapStateToProps)
 export default class {{PascalName}} extends Component {
   static propTypes = {
-    name: PropTypes.string.isRequired
+    pageTitle: PropTypes.string.isRequired
+    , pageMetaDescription: PropTypes.string.isRequired
   }
 
   static defaultProps = {
-    name: '{{titleName}}'
+    pageTitle: '{{titleName}}'
+    , pageMetaDescription: ''
   }
 
   static getData ({store, params}, done) {
@@ -30,11 +33,23 @@ export default class {{PascalName}} extends Component {
   }
 
   render () {
+    const {
+      pageTitle
+      , pageMetaDescription
+    } = this.props
+
     return (<Columns>
+
+      <Helmet
+        title={pageTitle}
+        meta={[{ name: 'description', content: pageMetaDescription}]}
+      />
+
       <div>
-        <h1 className={styles.title} testRef="title">{this.props.name} component</h1>
-        <img src={`http://loremflickr.com/600/600/${this.props.name}`} alt={this.props.name} />
+        <h1 className={styles.title} testRef="title">{pageTitle} component</h1>
+        <img src={`http://loremflickr.com/600/600/${pageTitle}`} alt={pageTitle} />
       </div>
+
     </Columns>)
   }
 }
