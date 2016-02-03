@@ -22,7 +22,7 @@ test('{{PascalName}}: constructor', (t) => {
   const _warn = console.error
   console.error = () => {}
   t.doesNotThrow(
-    () => testTree(<{{PascalName}} />).dispose()
+    () => testTree(<{{PascalName}}.WrappedComponent />).dispose()
     , 'does not throw when there are no props, to ensure a loading state is possible'
   )
   console.error = _warn
