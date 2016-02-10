@@ -1,10 +1,6 @@
-:root {
-  /* define your namespaced vars here
-  --fontSize-normal-{{camelName}}: 1rem;
-  */
-}
-
-/* example style, you can delete me*/
-.title {
-  color: red;
+.page {
+  /* the app template sets `display: flex; flex-flow: column;` to ensure that
+  the page fills the height of the screen. Setting `width: 100%;` ensures that
+  the page content fills the width of the screen too. */
+  width: 100%;
 }

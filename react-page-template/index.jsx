@@ -2,7 +2,6 @@ import React, {PropTypes, Component} from 'react'
 import Helmet from 'react-helmet'
 import {connect} from 'react-redux'
 import styles from './index.css'
-import Columns from '../_pieces/columns'
 
 const mapStateToProps = (state) => {
   return {}
@@ -38,19 +37,19 @@ export default class {{PascalName}} extends Component {
       , pageMetaDescription
     } = this.props
 
-    return (<Columns>
+    return (<div className={styles.page}>
 
       <Helmet
         title={pageTitle}
-        meta={[{ name: 'description', content: pageMetaDescription}]}
+        meta={[{name: 'description', content: pageMetaDescription}]}
       />
 
       <div>
-        <h1 className={styles.title} testRef="title">{pageTitle} component</h1>
+        <h1 testRef="title">{pageTitle} component</h1>
         <img src={`http://loremflickr.com/600/600/${pageTitle}`} alt={pageTitle} />
       </div>
 
-    </Columns>)
+    </div>)
   }
 }
 
