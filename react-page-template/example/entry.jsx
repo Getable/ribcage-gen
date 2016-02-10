@@ -1,4 +1,5 @@
 import React from 'react'
+import Perf from 'react-addons-perf'
 import createStore from '../../../stores/index-dev.js'
 import createDevTools from '../../../static/create-devtools.js'
 import runDev from '../../../static/run-dev.js'
@@ -12,7 +13,15 @@ window.React = React
 
 const DevTools = createDevTools()
 const store = createStore({DevTools})
-const children = <{{PascalName}} {...data} />
-
 runDev({store, DevTools})
-run({store, children})
+
+Perf.start()
+const children = <{{PascalName}} {...data} />
+run({store, children}, () => {
+  // prints the amount of time wasted doing extra work. This should print an
+  // empty array. If you see a table, something's wrong. Make sure that
+  // pureRender is working and that data is immuatble.
+  console.info('Perf.printWasted()')
+  Perf.printWasted()
+  Perf.stop()
+})
