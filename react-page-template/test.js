@@ -33,7 +33,7 @@ test('{{PascalName}}: constructor', (t) => {
 // I'm a sample test, you probably want to delete me
 test('{{PascalName}}: render', (t) => {
   const name = 'john doe'
-  const tree = testTree(<{{PascalName}} {...defaultProps} />)
+  const tree = testTree(<{{PascalName}}.WrappedComponent {...defaultProps} />)
 
   t.equal(
     tree.get('title').innerText
