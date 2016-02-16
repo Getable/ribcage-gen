@@ -6,9 +6,9 @@ import styles from './index.css'
 const mapStateToProps = (state) => {
   return {}
 }
-// NOTE: if this component is used directly by react-router, not use the
-// pureRender decorator. It will cause the <Link> component to not re-render.
-@connect(mapStateToProps)
+const mapDispatchToProps = {}
+
+@connect(mapStateToProps, mapDispatchToProps)
 export default class {{PascalName}} extends Component {
   static propTypes = {
     pageTitle: PropTypes.string.isRequired
