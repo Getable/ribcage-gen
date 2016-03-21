@@ -1,5 +1,5 @@
 import test from 'tape'
-import {{PascalName}} from './index.jsx'
+import {{PascalName}} from './index.js'
 import React from 'react'
 import {isElement} from 'react-addons-test-utils'
 import testTree from 'react-test-tree'

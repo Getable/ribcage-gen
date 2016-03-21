@@ -5,7 +5,7 @@ import createDevTools from '../../../static/create-devtools.js'
 import runDev from '../../../static/run-dev.js'
 import run from '../../../static/run.js'
 
-import {{PascalName}} from '../index.jsx'
+import {{PascalName}} from '../index.js'
 import data from './data.js'
 
 // expose React for debugging

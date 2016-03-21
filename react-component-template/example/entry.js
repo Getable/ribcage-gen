@@ -3,7 +3,7 @@ import Perf from 'react-addons-perf'
 import ReactDOM from 'react-dom'
 import a11y from 'react-a11y'
 
-import {{PascalName}} from '../index.jsx'
+import {{PascalName}} from '../index.js'
 import data from './data.js'
 
 // expose React for debugging
