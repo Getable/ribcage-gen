@@ -2,7 +2,7 @@ import test from 'tape'
 import {{PascalName}} from './index.js'
 import React from 'react'
 import {isElement} from 'react-addons-test-utils'
-import testTree from 'react-test-tree'
+import {shallow as render} from 'enzyme'
 import defaultProps from './example/data.js'
 
 test('{{PascalName}}: constructor', (t) => {
@@ -22,7 +22,7 @@ test('{{PascalName}}: constructor', (t) => {
   const _warn = console.error
   console.error = () => {}
   t.doesNotThrow(
-    () => testTree(<{{PascalName}}.WrappedComponent />).dispose()
+    () => render(<{{PascalName}}.WrappedComponent />)
     , 'does not throw when there are no props, to ensure a loading state is possible'
   )
   console.error = _warn
@@ -33,15 +33,13 @@ test('{{PascalName}}: constructor', (t) => {
 // I'm a sample test, you probably want to delete me
 test('{{PascalName}}: render', (t) => {
   const name = 'john doe'
-  const tree = testTree(<{{PascalName}}.WrappedComponent {...defaultProps} />)
+  const tree = render(<{{PascalName}}.WrappedComponent {...defaultProps} />)
 
-  t.equal(
-    tree.get('title').innerText
-    , name
-    , 'puts the name prop in the title'
+  t.ok(
+    tree.contains(name)
+    , 'has the title prop'
   )
 
-  tree.dispose()
   t.end()
 })
 
