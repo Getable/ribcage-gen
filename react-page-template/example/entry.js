@@ -8,7 +8,6 @@ import createRouter from '../../../static/create-router'
 import {Route} from 'react-router'
 
 import {{PascalName}} from '../index.js'
-import data from './data.js'
 
 // expose React for debugging
 window.React = React
