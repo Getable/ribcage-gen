@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react'
 import Helmet from 'react-helmet'
 import {connect} from 'react-redux'
 import styles from './index.css'
+import {routerShape} from 'react-router'
 
 const mapStateToProps = (state) => {
   return {}
@@ -10,6 +11,10 @@ const mapDispatchToProps = {}
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class {{PascalName}} extends Component {
+  static contextTypes = {
+    router: routerShape.isRequired
+  }
+
   static propTypes = {
     pageTitle: PropTypes.string.isRequired
     , pageMetaDescription: PropTypes.string.isRequired

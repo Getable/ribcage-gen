@@ -4,6 +4,8 @@ import createStore from '../../../stores/index-dev.js'
 import createDevTools from '../../../static/create-devtools.js'
 import runDev from '../../../static/run-dev.js'
 import run from '../../../static/run.js'
+import createRouter from '../../../static/create-router'
+import {Route} from 'react-router'
 
 import {{PascalName}} from '../index.js'
 import data from './data.js'
@@ -11,12 +13,13 @@ import data from './data.js'
 // expose React for debugging
 window.React = React
 
+const routes = <Route path="/" component={{{PascalName}}} />
 const DevTools = createDevTools()
 const store = createStore({DevTools})
 runDev({store, DevTools})
 
 Perf.start()
-const children = <{{PascalName}} {...data} />
+const children = createRouter({routes})
 run({store, children}, () => {
   // prints the amount of time wasted doing extra work. This should print an
   // empty array. If you see a table, something's wrong. Make sure that
