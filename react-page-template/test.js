@@ -3,7 +3,8 @@ import {{PascalName}} from './index.js'
 import React from 'react'
 import {isElement} from 'react-addons-test-utils'
 import {shallow as render} from 'enzyme'
-import defaultProps from './example/data.js'
+
+const defaultProps = {}
 
 test('{{PascalName}}: constructor', (t) => {
   const {{camelName}} = React.createElement({{PascalName}}, defaultProps)
