@@ -1,5 +1,5 @@
 import React, {PropTypes, Component} from 'react'
-import pureRender from 'pure-render-decorator'
+import {immutableRenderDecorator as pureRender} from '@joeybaker/react-immutable-render-mixin'
 import styles from './index.css'
 
 // NOTE: if this component is used directly by react-router, not use the
