@@ -1,4 +1,5 @@
-/* example style, you can delete me*/
-.title {
-  color: red;
+.container {
+  /* tell the browser that this is a self-contained element that won't break
+  out of it's box */
+  contain: content;
 }

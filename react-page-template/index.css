@@ -3,4 +3,7 @@
   the page fills the height of the screen. Setting `width: 100%;` ensures that
   the page content fills the width of the screen too. */
   width: 100%;
+  /* tell the browser that this is a self-contained element that won't break
+  out of it's box */
+  contain: content;
 }
