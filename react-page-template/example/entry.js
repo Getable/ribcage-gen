@@ -12,7 +12,8 @@ import {{PascalName}} from '../index.js'
 // expose React for debugging
 window.React = React
 
-const routes = <Route path="/" component={{{PascalName}}} />
+const component = {{PascalName}}
+const routes = <Route path="/" component={component} />
 const DevTools = createDevTools()
 const store = createStore({DevTools})
 runDev({store, DevTools})
