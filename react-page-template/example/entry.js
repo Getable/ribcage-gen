@@ -1,8 +1,7 @@
 import React from 'react'
 import Perf from 'react-addons-perf'
-import createStore from '../../../stores/index-dev.js'
-import createDevTools from '../../../static/create-devtools.js'
-import runDev from '../../../static/run-dev.js'
+// NOTE: you might need to change this to the index for your app
+import createStore from '../../../stores/index.js'
 import run from '../../../static/run.js'
 import createRouter from '../../../static/create-router'
 import {Route} from 'react-router'
@@ -14,9 +13,7 @@ window.React = React
 
 const component = {{PascalName}}
 const routes = <Route path="/" component={component} />
-const DevTools = createDevTools()
-const store = createStore({DevTools})
-runDev({store, DevTools})
+const store = createStore()
 
 Perf.start()
 const children = createRouter({routes})
