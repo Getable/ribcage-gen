@@ -15,12 +15,13 @@ var hbsDir = require('hbs-dir')
 typeMap.jsx = typeMap.react
 
 module.exports = function ribcageGen (options, cb) {
-  var type = typeMap[options.type]
+  const type = typeMap[options.type]
   if (!options) throw new Error('options are required')
   if (!type) throw new Error('type ' + options.type + ' not found')
+  const {target} = options
 
   // hacky way to ensure pages
-  if (options.type === 'react' && options.target.indexOf('/page-') > -1) {
+  if (options.type === 'react' && (target.indexOf('/page-') > -1) || target.indexOf('/connected-') > -1)  {
     type = typeMap.page
   }
 
