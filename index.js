@@ -15,7 +15,7 @@ var hbsDir = require('hbs-dir')
 typeMap.jsx = typeMap.react
 
 module.exports = function ribcageGen (options, cb) {
-  const type = typeMap[options.type]
+  let type = typeMap[options.type]
   if (!options) throw new Error('options are required')
   if (!type) throw new Error('type ' + options.type + ' not found')
   const {target} = options
