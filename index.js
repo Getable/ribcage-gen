@@ -25,13 +25,11 @@ module.exports = function ribcageGen (options, cb) {
     type = typeMap.page
   }
 
-  var target = path.join(process.cwd(), options.target)
-
-  var nameParts = options.target.split(path.sep)
+  const nameParts = options.target.split(path.sep)
   , name = nameParts[nameParts.length - 1]
   , opts = {
     origin: path.join(__dirname, type)
-    , target: target
+    , target: path.join(process.cwd(), target)
     , context: {
         PascalName: change.pascalCase(name)
         , camelName: change.camelCase(name)
